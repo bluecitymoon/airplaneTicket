@@ -1,0 +1,84 @@
+<ion-view view-title="{{searchCondtion.from}}-{{searchCondtion.to}}">
+        <ion-content style="background-color: #efeeeb">
+        <div class="standard-border">
+            <div class="color-blue-background">
+                <div class="row" style="color: #ffffff;">
+                    <div class="col"></div>
+                    <div class="col">5 月 25 日</div>
+                    <div class="col"></div>
+                </div>
+                <div class="row"><h2 style="color: #ffffff;">7: 20 -------- 9: 30</h2></div>
+                <div class="row" style="color: #ffffff;"> 5 月 25 日</div>
+            </div>
+            <div class="row color-white-background">
+                <div class="col col-30">成人票价：</div>
+                <div class="col col-20">670</div>
+                <div class="col col-30">基建燃油费</div>
+                <div class="col col-20">60</div>
+            </div>
+            <div class="row color-white-background">
+                <div class="col col-30">成人票价：</div>
+                <div class="col col-20">670</div>
+                <div class="col col-30">基建燃油费</div>
+                <div class="col col-20">60</div>
+            </div>
+        </div>
+        <div class="standard-border" style="background-color: #ffe2a5">
+            <button class="button button-block button-clear" type="button" style="color: #ffae00;">查看退改签规则</button>
+        </div>
+        <div class="standard-border color-white-background">
+            <div class="row">
+                <div class="col col-75" style="font-size: 15px">
+                    单张结算价={{1200}}+{{120}}={{1320}}
+                </div>
+                <div class="col col-25 color-font-yellow" style="font-size: 22px">
+                    ¥{{1320}}
+                </div>
+            </div>
+        </div>
+
+        <div class="standard-border color-white-background">
+            <div class="row">
+                <div class="col col-20 font-size-15">
+                    姓名
+                </div>
+                <div class="col col-50">
+                    <input type="text" ng-model="passengerName" placeholder="请输入姓名">
+                </div>
+                <div class="col col-20">
+                    <a ng-click="showContactsList()"><i class="ion-plus-circled color-font-yellow"
+                                                        style="font-size: 20px;"></i></a>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col col-33 font-size-15">
+                    乘机人类型
+                </div>
+                <div class="col col-66">
+                    <input type="radio" name="passengerType"/>成人
+                    <input type="radio" name="passengerType"/>儿童
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col col-50 font-size-15">
+                    联系电话
+                </div>
+                <div class="col col-50">
+                    <input type="text" ng-model="passengerName" placeholder="请输入联系电话">
+                </div>
+            </div>
+        </div>
+    </ion-content>
+    <div class="bar bar-footer">
+        <div class="row color-black-background">
+            <div class="col col-50">
+                <p class="color-font-yellow">1520</p>
+            </div>
+            <div class="col col-50"></div>
+        </div>
+        <button class="button color-blue-background" style="width: 40%" ng-click="sumbitOrder()"><b class="color-font-white">提交订单</b></button>
+    </div>
+</ion-view>
+

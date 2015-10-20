@@ -1,0 +1,22 @@
+<ion-view view-title="{{from}}-{{to}} {{flightCount}}次航班">
+    <ion-content>
+        <ion-list>
+            <ion-item ng-repeat="flight in flights" href="#/app/singleflight/{{flight.id}}/{{from}}/{{to}}">
+                <div class="row">
+                    <div class="col">{{flight.takeoffAt}}</div>
+                    <div class="col">{{flight.takeoffAirport}}</div>
+                    <div class="col">{{flight.price}}</div>
+                </div>
+                <div class="row">
+                    <div class="col">{{flight.landingAt}}</div>
+                    <div class="col">{{flight.landingAirport}}</div>
+                    <div class="col">{{flight.cabinType}}{{flight.promotionRate}}折</div>
+                </div>
+                <div class="row">
+                    <div class="col">{{flight.ticketSupplier}}|{{flight.planeType}}</div>
+                </div>
+
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

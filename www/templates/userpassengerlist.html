@@ -1,0 +1,18 @@
+<ion-view view-title="常用旅客信息">
+    <ion-content class="color-gray-background">
+        <ion-list>
+            <ion-item ng-repeat="passenger in passengers" href="#/app/passengermanangement/mgr/{{passenger.userId}}"
+                      class="color-white-background">
+                <div class="row">
+                    <div class="col col-20">
+                        <p>订单编号：{{passenger.name}}</p>
+                    </div>
+                    <div class="col col-80">
+                        <p>{{passenger.certificateNumber}}</p>
+                    </div>
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
+

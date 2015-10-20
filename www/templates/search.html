@@ -1,0 +1,29 @@
+<ion-view view-title="机票搜索">
+    <ion-content>
+        <form ng-submit="searchTickets()">
+            <div class="list">
+                <label class="item item-input">
+                    <span class="input-label">出发城市</span>
+                    <input type="text" ng-model="from">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">到达城市</span>
+                    <input type="text" ng-model="to">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">日期</span>
+                    <ionic-datepicker idate="currentDate" disablepreviousdates="true"  disablefuturedates="false" callback="datePickerCallback" disableddates="disabledDates" title="title" mondayfirst="true">
+                        <button type="button" class="button button-clear button-positive"> {{ currentDate | date:'yyyy - MMMM - dd' }} </button>
+                    </ionic-datepicker>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">席位</span>
+                    <input type="text" ng-model="seachCondition.seatRange">
+                </label>
+                <label class="item">
+                    <button class="button button-block button-positive" type="submit">搜索</button>
+                </label>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>

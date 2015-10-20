@@ -1,0 +1,35 @@
+<ion-view view-title="{{searchCondtion.from}}-{{searchCondtion.to}}">
+    <ion-content>
+        <div style="background-color: #14b5e1">
+            <div class="row" style="color: #ffffff;">
+                <div class="col"></div>
+                <div class="col">5 月 25 日</div>
+                <div class="col"></div>
+            </div>
+            <div class="row"><h2 style="color: #ffffff;">7: 20 -------- 9: 30</h2></div>
+            <div class="row" style="color: #ffffff;"> 5 月 25 日</div>
+        </div>
+        <ion-list>
+            <ion-item ng-repeat="cabin in cabins" href="#/app/order/{{cabin.id}}">
+                <div class="row">
+                    <div class="col col-80">
+                        <div class="row">
+                            <div class="col" style="font-size: 24px; color: #444444;">{{cabin.typeName}}</div>
+                            <div class="col" style="font-size: 30px; color: #ffae00;">¥{{cabin.price}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col"><p>剩余{{cabin.ticketsLeft}}张</p></div>
+                            <div class="col"><p style="color: #14b5e1;">{{cabin.promotionRate}}折</p></div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <button class="button" style="background-color: #14b5e1">
+                            <b style="color: #ffffff;">预订</b>
+                        </button>
+                    </div>
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
+

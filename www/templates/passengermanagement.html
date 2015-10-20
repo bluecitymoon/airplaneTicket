@@ -1,0 +1,47 @@
+<script id="templates/form-errors.html" type="text/ng-template">
+    <div class="form-error" ng-message="required">This field is required.</div>
+    <div class="form-error" ng-message="minlength">This field is must be at least 5 characters.</div>
+    <div class="form-error" ng-message="maxlength">This field is must be less than 50 characters</div>
+</script>
+<ion-view view-title="常用旅客信息">
+  <ion-content>
+    <form ng-submit="savePassenger(passengerForm)" name="passengerForm" novalidate>
+      <div class="list">
+        <label class="item item-input required" ng-class="{ 'has-errors' : passengerForm.passengerName.$invalid}">
+          <span class="input-label">姓名</span>
+          <input type="text" ng-model="passenger.name" name="passengerName" placeholder="请输入姓名" required><br>
+        </label>
+          <div class="error-container" ng-show="passengerForm.passengerName.$error" ng-messages="passengerForm.passengerName.$error">
+              <div class="error" ng-message="required" style="height: 30px;">
+                  <i class="ion-information-circled"></i>
+                  行不更名，坐不改姓，请输入姓名！
+              </div>
+          </div>
+        <div class="item item-input" ng-click="showPassengerType()">
+            <span class="input-label">乘客类型</span>
+            <label style="width: 40%; text-align: right">{{passenger.type}}</label>
+            <a style="margin-left: 10px"><i class="ion-ios-arrow-down color-font-yellow" style="font-size: 20px;"></i></a>
+        </div>
+        <label class="item item-input" ng-click="showCertificateType()">
+          <span class="input-label">证件类型</span>
+            <label style="width: 40%; text-align: right">{{passenger.certificateType}}</label>
+            <a style="margin-left: 10px"><i class="ion-ios-arrow-down color-font-yellow" style="font-size: 20px;"></i></a>
+        </label>
+        <label class="item item-input" ng-class="{ 'has-errors' : passengerForm.certificateNumber.$invalid}">
+          <span class="input-label">证件号码</span>
+          <input type="text" name="certificateNumber" ng-model="passenger.certificateNumber" placeholder="请输入证件号" required>
+        </label>
+          <div class="error-container" ng-show="passengerForm.certificateNumber.$error" ng-messages="passengerForm.certificateNumber.$error" style="height: 30px;">
+              <div class="error" ng-message="required">
+                  <i class="ion-information-circled"></i>
+                  输入证件号码
+              </div>
+          </div>
+          <ion-toggle ng-model="passenger.addedAsContact" ng-checked="passenger.addedAsContact" ng-class="">保存为常用旅客</ion-toggle>
+        <label class="item">
+          <button class="button button-block color-blue-background" type="submit"><p class="color-font-white">保存</p></button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>
